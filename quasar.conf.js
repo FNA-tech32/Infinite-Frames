@@ -76,6 +76,18 @@ module.exports = function (/* ctx */) {
       // preloadChunks: false,
       // extractCSS: false,
 
+      // Dart Sass no longer supports "nested"; Quasar 1 defaults to it for RTL.
+      sassLoaderOptions: {
+        sassOptions: {
+          outputStyle: 'expanded'
+        }
+      },
+      scssLoaderOptions: {
+        sassOptions: {
+          outputStyle: 'expanded'
+        }
+      },
+
       // https://quasar.dev/quasar-cli/cli-documentation/handling-webpack
       extendWebpack (cfg) {
       },

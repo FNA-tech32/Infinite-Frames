@@ -9,7 +9,7 @@
   "private": true,
   "scripts": {
     "dev": "quasar dev",
-    "build": "quasar build",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider quasar build",
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
@@ -19,13 +19,18 @@
     "vue-i18n": "^8.0.0"
   },
   "devDependencies": {
-    "@quasar/app": "^1.0.0",
-    "@quasar/quasar-app-extension-qflashcard": "^1.0.1"
+    "@quasar/app": "1.9.6",
+    "@quasar/quasar-app-extension-qflashcard": "^1.0.1",
+    "cross-env": "^7.0.3",
+    "sass": "1.69.5"
+  },
+  "overrides": {
+    "node-sass": "npm:sass@1.69.5",
+    "zlib": "npm:empty-npm-package@1.0.0"
   },
   "engines": {
-    "node": ">= 10.18.1",
-    "npm": ">= 6.13.4",
-    "yarn": ">= 1.21.1"
+    "node": "24.x",
+    "npm": ">= 8"
   },
   "browserslist": [
     "last 1 version, not dead, ie >= 11"
